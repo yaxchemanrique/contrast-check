@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+  --clr-neutral-950: #000000;
+  --clr-neutral-50: #FFFFFF;
+  
+  --ff-code: "Red Hat Mono", monospace;
+  --ff-body: "Manrope", sans-serif;
+}
+
+body {
+  font-family: var(--ff-body);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
