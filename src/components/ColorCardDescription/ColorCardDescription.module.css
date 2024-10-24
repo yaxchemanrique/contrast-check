@@ -1,0 +1,36 @@
+.colorCardDescription {
+  border: var(--border);
+  border-radius: 0.5rem;
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colorCardDescription p {
+  margin: 0;
+}
+
+.colorCardDescription span {
+  font-weight: 600;
+}
+
+.iconContainer {
+  position: absolute;
+  width: calc(100% - 2rem);
+}
+
+.iconContainer button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  transition: all 250ms ease-in-out;
+}
+
+.iconContainer button:hover {
+  opacity: 0.5;
+  scale: 1.05;
+}
