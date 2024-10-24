@@ -1,0 +1,18 @@
+.tag {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  align-items: center;
+  gap: 0.25rem;
+  width: fit-content;
+  border-radius: 0.25rem;
+}
+
+.no {
+  background-color: #FFE7EA;
+  color: #620E18;
+}
+
+.yes {
+  background-color: #E7FFE9;
+  color: #435844;
+}
