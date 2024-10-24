@@ -1,0 +1,41 @@
+.quoteCard, .quoteCard label {
+  cursor: pointer;
+}
+
+.quoteCard {
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.checkbox {
+  background-color: aqua;
+  position: relative;
+  display: block;
+}
+
+.checkbox svg {
+  transition: opacity 250ms ease-in-out;
+  position: absolute;
+  right: 0;
+}
+
+.checkbox .hidden {
+  opacity: 0;
+}
+
+.checkbox .show {
+  opacity: 1;
+}
+
+.quoteCard [type="checkbox"] {
+  appearance: none;
+}
+
+.title {
+  font-size: 2.25rem;
+}
+
+.quoteCard [rel="author"] {
+  
+}
