@@ -1,0 +1,24 @@
+.colorCard * {
+  margin: 0;
+}
+
+.colorCard {
+  padding: 1.125rem;
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.color {
+  aspect-ratio: 1;
+}
+
+.colorTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.codeContainer span {
+  font-weight: 600;
+}
