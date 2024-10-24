@@ -6,6 +6,8 @@
   
   --ff-code: "Red Hat Mono", monospace;
   --ff-body: "Manrope", sans-serif;
+
+  --border: 1px solid #0000002b;
 }
 
 body {
@@ -15,4 +17,5 @@ body {
 button {
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
