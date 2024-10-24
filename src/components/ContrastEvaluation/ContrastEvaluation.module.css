@@ -1,0 +1,56 @@
+.contrastEval * {
+  margin: 0;
+}
+
+.contrastEval {
+  border-radius: 1rem;
+  border: var(--border);
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.contrast {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.body {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.body span {
+  margin-right: 1.125rem;
+}
+
+.header {
+  margin-bottom: 0.5rem;
+  font-weight: 500; 
+}
+
+.smallText {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.bigText {
+  font-weight: 600; 
+}
+
+.yes .title {
+  background-color: #E7FFE9;
+  color: #435844;
+}
+
+.no .title {
+  background-color: #FFE7EA;
+  color: #620E18;
+}
