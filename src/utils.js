@@ -1,5 +1,5 @@
 export function range(length) {
-  if(length <= 0) throw new Error("Please enter a number greater than cero");
+  if(length < 0) throw new Error("Please enter a number greater than cero");
   
   let arr = []
   
