@@ -1,4 +1,4 @@
-.quoteCard, .quoteCard label {
+.quoteCard label {
   cursor: pointer;
 }
 
@@ -6,10 +6,10 @@
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .checkbox {
-  background-color: aqua;
   position: relative;
   display: block;
 }
@@ -36,6 +36,6 @@
   font-size: 2.25rem;
 }
 
-.quoteCard [rel="author"] {
-  
+.quoteCardWithoutSelection {
+  cursor: auto;
 }
