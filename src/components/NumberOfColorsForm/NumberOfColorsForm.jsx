@@ -46,8 +46,8 @@ function NumberOfColorsForm() {
       </div>
       {areColorInputsShowing && (
         <div className={styles.colorInputsContainer}>
-          {colors.map(({id, value}, index) => (
-            <ColorInput key={id} id={id} value={value} colorNumber={index + 1} />
+          {colors.map(({id, value, colorName}, index) => (
+            <ColorInput key={`${id}-${value}`} id={id} value={value} initialColorName={colorName} colorNumber={index + 1} />
           ))}
         </div>
       )}

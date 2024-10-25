@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Trash } from "react-feather";
 import { ColorsContext } from "../../providers/ColorsProvider";
 
@@ -6,15 +6,19 @@ import Button from "../Button/Button";
 
 import styles from "./ColorInput.module.css";
 
-function ColorInput({ colorNumber, value, id }) {
+function ColorInput({ colorNumber, value, id, initialColorName }) {
   const [color, setColor] = useState(value);
-  const [colorName, setColorName] = useState("");
+  const [colorName, setColorName] = useState(initialColorName);
   const { removeColor, updateColorsArray } = useContext(ColorsContext);
   
   function handleUpdateColor(value) {
     setColor(value);
-    updateColorsArray(id, value)
+    updateColorsArray(id, value);
   }
+
+  useEffect(()=> {
+    setColorName(initialColorName);
+  }, [color])
   
   return (
     <div className={styles.colorInputContainer}>

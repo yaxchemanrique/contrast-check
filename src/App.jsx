@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ColorsContext } from "./providers/ColorsProvider";
 
 import NumberOfColorsForm from "./components/NumberOfColorsForm/NumberOfColorsForm";
@@ -54,14 +54,13 @@ function App() {
       <h2>Tus paleta de colores</h2>
       <ColorPaletteContainer>
         {colors.map((color) => (
-          <ColorCard key={color.id} color={color.value} />
+          <ColorCard key={color.id} color={color.value} name={color.colorName}/>
         ))}
       </ColorPaletteContainer>
       <h2>Tus combinaciones selccionadas</h2>
       <ColorCombosContainer>
         {selectedColorCombos.length > 0 ? (
           selectedColorCombos.map((selected) => {
-            console.log(selected);
             return (
               <div key={`selected-${selected.id}`}>
                 <QuoteCardWithoutSelection

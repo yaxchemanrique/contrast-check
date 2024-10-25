@@ -51,10 +51,8 @@ function QuoteCard({ id, background, foreground }) {
           onChange={(e) => {
             setIsChecked(e.target.checked);
             if (e.target.checked) {
-              console.log("checked", id);
               handleComboSelection("add", id);
             } else {
-              console.log("UNchecked", id);
               handleComboSelection("remove", id);
             }
           }}

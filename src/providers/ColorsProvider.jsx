@@ -6,6 +6,8 @@ export const ColorsContext = createContext();
 const accessibleColorsApi =
   "https://www.aremycolorsaccessible.com/api/are-they";
 
+const theColorApi = "https://www.thecolorapi.com/id?hex=";
+
 function ColorsProvider({ children }) {
   const initialValue = "#000000";
 
@@ -52,28 +54,46 @@ function ColorsProvider({ children }) {
     return combosContrast;
   }
 
-  function createInitialColorsArray(length) {
+  async function createInitialColorsArray(length) {
     const lengthNumber = Number(length);
     let nextColors = [];
-    range(lengthNumber).forEach((num) =>
-      nextColors.push({ id: crypto.randomUUID(), value: initialValue })
-    );
+    for (let i = 0; i < lengthNumber; i++) {
+      const colorName = await fetchColorName(initialValue);
+      const color = {
+        id: crypto.randomUUID(), 
+        value: initialValue,
+        colorName,
+      }
+     nextColors.push(color) 
+    }
     setColors(nextColors);
   }
 
-  function updateColorsArray(id, value) {
+  async function updateColorsArray(id, value) {
     let nextColors = [...colors];
     const colorToUpdateIndex = nextColors.findIndex((color) => color.id === id);
     let colorUpdated = nextColors.filter((color) => color.id === id)[0];
     colorUpdated.value = value;
+    const colorName = await fetchColorName(colorUpdated.value);
+    colorUpdated.colorName = colorName;
     nextColors[colorToUpdateIndex] = colorUpdated;
     setColors(nextColors);
   }
 
-  function addNewColor(value) {
+  async function fetchColorName(code) {
+    const codeValue = code.slice(1, code.length);
+    const response = await fetch(`${theColorApi}${codeValue}`);
+    const data = await response.json();
+    const colorName = data.name.value
+    return colorName;
+  }
+
+  async function addNewColor(value) {
+    const colorName = await fetchColorName(value);
     let newColor = {
       id: crypto.randomUUID(),
-      value: value,
+      value,
+      colorName,
     };
     const nextColors = [...colors, newColor];
     setColors(nextColors);
