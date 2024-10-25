@@ -1,7 +1,9 @@
 import { useState, useContext } from "react";
 import { Trash } from "react-feather";
 import { ColorsContext } from "../../providers/ColorsProvider";
+
 import Button from "../Button/Button";
+
 import styles from "./ColorInput.module.css";
 
 function ColorInput({ colorNumber, value, id }) {
@@ -15,7 +17,7 @@ function ColorInput({ colorNumber, value, id }) {
   }
   
   return (
-    <div>
+    <div className={styles.colorInputContainer}>
       <label htmlFor={id}>Color {colorNumber}:</label>
       <input
         type="color"
