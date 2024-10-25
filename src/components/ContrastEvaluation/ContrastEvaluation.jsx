@@ -1,20 +1,30 @@
 import React from "react";
-import { Star } from "react-feather";
-import Tag from "../Tag/Tag";
-import styles from "./ContrastEvaluation.module.css";
 import { range } from "../../utils";
+import { Star } from "react-feather";
 
-function ContrastEvaluation({ type, stars }) {
+import Tag from "../Tag/Tag";
+
+import styles from "./ContrastEvaluation.module.css";
+
+function ContrastEvaluation({ type, stars, contrast, large, small, overall }) {
   const className = `${styles.contrastEval} ${
     type === "yes" ? styles.yes : styles.no
   }`;
 
+  const contrastString = contrast.slice(0, 5);
+  const noramalAA = small === "AA" || small === "AAA" ? "yes" : "no";
+  const largeAA = large === "AA" || large === "AAA" ? "yes" : "no";
+  const noramalAAA = small === "AAA" ? "yes" : "no";
+  const largeAAA = large === "AAA" ? "yes" : "no";
+
+  const overallString = overall === 'Yup' ? 'increíble' : overall === 'Kinda' ? 'hmmm...' : 'nope'
+
   return (
     <article className={className}>
       <div className={styles.title}>
-        <p className={styles.contrast}>21.00 : 1.00</p>
+        <p className={styles.contrast}>{contrastString} : 1.00</p>
         <div className={styles.raiting}>
-          <span>increíble</span>
+          <span>{overallString}</span>
           <div className={styles.stars}>
             {range(stars).map((star) => (
               <Star key={star} size={13} fill="current-color" />
@@ -32,13 +42,13 @@ function ContrastEvaluation({ type, stars }) {
         <p>
           <span className={styles.smallText}>Aa</span>Texto Normal
         </p>
-        <Tag type="yes" />
-        <Tag type="no" />
+        <Tag type={noramalAA} />
+        <Tag type={noramalAAA} />
         <p>
           <span className={styles.bigText}>Aa</span>Texto Grande
         </p>
-        <Tag type="yes" />
-        <Tag type="yes" />
+        <Tag type={largeAA} />
+        <Tag type={largeAAA} />
       </div>
     </article>
   );
