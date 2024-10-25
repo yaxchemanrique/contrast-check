@@ -62,8 +62,8 @@
 
   position: absolute;
   top: 60%;
-  transform: translateY(-100%);
-  padding-block: 1.2rem;
+  transform: translateY(-120%);
+  padding-block: 0.5rem;
   padding-inline: 0.5rem;
   margin-inline: var(--margin-inline);
   width: calc(100% - 2 * var(--margin-inline));

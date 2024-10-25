@@ -8,7 +8,7 @@ function Footer() {
       <div className={`${styles.wrapper} wrapper`}>
         <div className={styles.meshTitle}>
           <div>
-            <object data="/inputs-title.svg"></object>
+            <object data="/contrast-mesh.svg"></object>
           </div>
           <address rel="author" className={styles.authorTag}>
             by Yaxche Manrique

@@ -26,7 +26,7 @@ function Header() {
         <div className={styles.meshTitle}>
           <h1>contrast check</h1>
           <div>
-            <object data="/inputs-title.svg"></object>
+            <object data="/contrast-mesh.svg"></object>
           </div>
           <address rel="author" className={styles.authorTag}>
             by Yaxche Manrique
