@@ -1,0 +1,29 @@
+.numberOfColorsForm {
+  margin-bottom: 5rem;
+}
+
+.numberOfColorsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.numberOfColorsInputs {
+  display: flex;
+  gap: 1.12rem;
+}
+
+.numberOfColorsInputs [type="number"] {
+  max-width: 5rem;
+}
+
+.colorInputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-block: 2.2rem;
+}
+
+.addColorButton {
+  margin-top: 2rem;
+}
