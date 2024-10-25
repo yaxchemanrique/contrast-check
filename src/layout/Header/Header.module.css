@@ -1,0 +1,87 @@
+.header {
+  min-height: 20rem;
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(180deg, var(--clr-accent-100-100) 90.27%, var(--clr-accent-100-0) 100%)
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-end: 2.6rem;
+}
+
+.logoContainer {
+  font-weight: 800;
+  color: var(--clr-accent-400-100);
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.4rem;
+  list-style: none;
+}
+
+.nav a {
+  color: inherit;
+  transition: color 250ms ease-in-out;
+}
+
+.nav a:hover {
+  color: var(--clr-accent-400-100);
+}
+
+.meshTitle {
+  position: relative;
+}
+
+.meshTitle div {
+  width: 100%;
+}
+
+.meshTitle h1 {
+  --margin-inline: 4.4rem;
+  --shadow-color: 257deg 30% 70%;
+
+  --text-shadow:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.23),
+    0.8px 1.6px 2.1px hsl(var(--shadow-color) / 0.25),
+    1.9px 3.8px 5px hsl(var(--shadow-color) / 0.27),
+    4.4px 8.8px 11.7px hsl(var(--shadow-color) / 0.29);
+
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 0.85;
+  text-wrap: balance;
+  color: white;
+  text-shadow: var(--text-shadow);
+
+  position: absolute;
+  top: 60%;
+  transform: translateY(-100%);
+  padding-block: 1.2rem;
+  padding-inline: 0.5rem;
+  margin-inline: var(--margin-inline);
+  width: calc(100% - 2 * var(--margin-inline));
+  border-right: 0.862px solid hsl(0 0% 100% / 50%);
+  border-bottom: 0.862px solid hsl(0 0% 100% / 50%);
+  backdrop-filter: blur(10px);
+  background-color: hsla(0, 0%, 87%, 0.4);
+}
+
+.authorTag {
+  background-color: black;
+  color: white;
+  font-style: normal;
+  font-size: 1.125rem;
+  width: fit-content;
+  padding: 0.25rem;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 110%);
+}

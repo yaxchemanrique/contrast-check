@@ -1,0 +1,49 @@
+.footer {
+  min-height: 30rem;
+  background-image: linear-gradient(0deg, var(--clr-accent-100-100) 85%, var(--clr-accent-100-0) 100%);
+  padding: 3rem;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  top: 100px;
+  transform: translateY(25%);
+}
+
+.authorTag {
+  background-color: black;
+  color: white;
+  font-style: normal;
+  font-size: 0.8rem;
+  width: fit-content;
+  padding: 0.25rem;
+  margin-inline: auto;
+}
+
+.footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.footer li {
+  width: 35px;
+  aspect-ratio: 1;
+  background-color: var(--clr-neutral-950);
+  display: grid;
+  place-content: center;
+  transition: all ease-in-out 200ms;
+}
+
+.footer a {
+  display: grid;
+  place-content: center;
+}
+
+.footer li:hover {
+  scale: 1.22;
+}

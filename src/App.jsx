@@ -10,78 +10,87 @@ import ColorCard from "./components/ColorCard/ColorCard";
 import ColorCardDescription from "./components/ColorCardDescription/ColorCardDescription";
 import ColorCombosContainer from "./components/ColorCombosContainer/ColorCombosContainer";
 import ColorPaletteContainer from "./components/ColorPaletteContainer/ColorPaletteContainer";
-
+import Header from "./layout/Header/Header.jsx";
+import Footer from "./layout/Footer/Footer.jsx";
 function App() {
   const { colors, colorCombos, colorCombosContrast, selectedColorCombos } =
     useContext(ColorsContext);
 
   return (
-    <div>
-      <NumberOfColorsForm />
-      <h2>Tus combinaciones</h2>
-      <ColorCombosContainer>
-        {colorCombos.length > 0 ? (
-          colorCombosContrast.map((combo) => (
-            <div key={`combos-${combo.id}`}>
-              <QuoteCard
-                id={combo.id}
-                background={combo.background}
-                foreground={combo.foreground}
-              />
-              <ContrastEvaluation
-                overall={combo.overall}
-                contrast={combo.contrast}
-                large={combo.large}
-                small={combo.small}
-                type={combo.overall === "Yup" ? "yes" : "no"}
-                stars={
-                  combo.overall === "Yup"
-                    ? 5
-                    : combo.overall === "Kinda"
-                    ? 3
-                    : 1
-                }
-              />
-            </div>
-          ))
-        ) : (
-          <div>
-            <p>No has seleccionado ningún color</p>
-            <img src="/help-add-colors.gif" />
-          </div>
-        )}
-      </ColorCombosContainer>
-      <h2>Tus paleta de colores</h2>
-      <ColorPaletteContainer>
-        {colors.map((color) => (
-          <ColorCard key={color.id} color={color.value} name={color.colorName}/>
-        ))}
-      </ColorPaletteContainer>
-      <h2>Tus combinaciones selccionadas</h2>
-      <ColorCombosContainer>
-        {selectedColorCombos.length > 0 ? (
-          selectedColorCombos.map((selected) => {
-            return (
-              <div key={`selected-${selected.id}`}>
-                <QuoteCardWithoutSelection
-                  background={selected.background}
-                  foreground={selected.foreground}
+    <>
+      <Header />
+      <main className="wrapper">
+        <NumberOfColorsForm />
+        <h2>Tus combinaciones</h2>
+        <ColorCombosContainer>
+          {colorCombos.length > 0 ? (
+            colorCombosContrast.map((combo) => (
+              <div key={`combos-${combo.id}`}>
+                <QuoteCard
+                  id={combo.id}
+                  background={combo.background}
+                  foreground={combo.foreground}
                 />
-                <ColorCardDescription
-                  background={selected.background}
-                  foreground={selected.foreground}
+                <ContrastEvaluation
+                  overall={combo.overall}
+                  contrast={combo.contrast}
+                  large={combo.large}
+                  small={combo.small}
+                  type={combo.overall === "Yup" ? "yes" : "no"}
+                  stars={
+                    combo.overall === "Yup"
+                      ? 5
+                      : combo.overall === "Kinda"
+                      ? 3
+                      : 1
+                  }
                 />
               </div>
-            );
-          })
-        ) : (
-          <div>
-            <p>No has seleccionado ninguna combinación</p>
-            <img src="/help-selection.gif" />
-          </div>
-        )}
-      </ColorCombosContainer>
-    </div>
+            ))
+          ) : (
+            <div>
+              <p>No has seleccionado ningún color</p>
+              <img src="/help-add-colors.gif" />
+            </div>
+          )}
+        </ColorCombosContainer>
+        <h2>Tus paleta de colores</h2>
+        <ColorPaletteContainer>
+          {colors.map((color) => (
+            <ColorCard
+              key={color.id}
+              color={color.value}
+              name={color.colorName}
+            />
+          ))}
+        </ColorPaletteContainer>
+        <h2>Tus combinaciones selccionadas</h2>
+        <ColorCombosContainer>
+          {selectedColorCombos.length > 0 ? (
+            selectedColorCombos.map((selected) => {
+              return (
+                <div key={`selected-${selected.id}`}>
+                  <QuoteCardWithoutSelection
+                    background={selected.background}
+                    foreground={selected.foreground}
+                  />
+                  <ColorCardDescription
+                    background={selected.background}
+                    foreground={selected.foreground}
+                  />
+                </div>
+              );
+            })
+          ) : (
+            <div>
+              <p>No has seleccionado ninguna combinación</p>
+              <img src="/help-selection.gif" />
+            </div>
+          )}
+        </ColorCombosContainer>
+      </main>
+      <Footer />
+    </>
   );
 }
 

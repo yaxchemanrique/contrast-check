@@ -3,6 +3,9 @@
 :root {
   --clr-neutral-950: #000000;
   --clr-neutral-50: #FFFFFF;
+  --clr-accent-100-0: #f2edff00;
+  --clr-accent-100-100: #F2EDFF;
+  --clr-accent-400-100: #9965ED;
   
   --ff-code: "Red Hat Mono", monospace;
   --ff-body: "Manrope", sans-serif;
@@ -12,6 +15,7 @@
 
 body {
   font-family: var(--ff-body);
+  margin: 0;
 }
 
 button {
@@ -38,4 +42,10 @@ h2 {
 
 img {
   max-width: 100%;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-inline: 2rem;
 }
